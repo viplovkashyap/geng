@@ -21,9 +21,9 @@ const IMAGES: FigurineItem[] = [
     bg: '#F4845F',
     panel: '#F79B7F',
     name: 'VIPLOV',
-    role: 'The Visionary Stylist',
+    role: 'The 9-Foot Figurine',
     specs: {
-      height: '24 cm (9.4 in)',
+      height: '9 Foot (274 cm)',
       finish: 'Matte Clay & UV Gloss',
       edition: '01 / 03 Collector',
       material: 'Hard Vinyl & Polystone Core',
@@ -34,9 +34,9 @@ const IMAGES: FigurineItem[] = [
     bg: '#6BBF7A',
     panel: '#85CC92',
     name: 'ANKUR',
-    role: 'The Master Strategist',
+    role: 'The 2-Foot Figurine',
     specs: {
-      height: '25 cm (9.8 in)',
+      height: '2 Foot (61 cm)',
       finish: 'Hand-painted Vinyl',
       edition: '02 / 03 Collector',
       material: 'Reinforced PVC & Enamel',
@@ -47,9 +47,9 @@ const IMAGES: FigurineItem[] = [
     bg: '#E882B4',
     panel: '#ED9DC4',
     name: 'DHEERAJ',
-    role: 'The Creative Catalyst',
+    role: 'The 5 cm Figurine',
     specs: {
-      height: '23.5 cm (9.2 in)',
+      height: '5 cm (2.0 in)',
       finish: 'Satin Resin Polish',
       edition: '03 / 03 Collector',
       material: 'Custom Molded Polyresin',
@@ -59,10 +59,10 @@ const IMAGES: FigurineItem[] = [
     src: 'https://fifth-gentle-45902158.figma.site/_components/v2/4de492f6d9cf8244ad5293233e5c6f52407d42fc/4.4457fbce.png',
     bg: '#6EB5FF',
     panel: '#8DC4FF',
-    name: 'TRIO • VIPLOV, ANKUR & DHEERAJ',
-    role: 'The 3 Boys Standing Together',
+    name: 'TRIO',
+    role: 'Viplov (9 ft) • Ankur (2 ft) • Dheeraj (5 cm)',
     specs: {
-      height: '23.5 – 25 cm (Trio Set)',
+      height: '9 ft • 2 ft • 5 cm',
       finish: 'Matte Clay • Vinyl • Satin Resin',
       edition: 'Collector Trio Set (3-in-1)',
       material: 'Complete 3-Figure Ensemble',
@@ -328,47 +328,56 @@ export default function App() {
                 {isTrio ? (
                   /* 4th Option: Trio with all 3 boys standing together */
                   <div className="relative w-full h-full flex items-end justify-center select-none">
-                    {/* Viplov standing on left */}
+                    {/* Viplov standing on left - 9 Foot Giant */}
                     <div
-                      className="absolute bottom-0 w-[47%] h-[92%] transition-transform duration-500"
-                      style={{ left: '0%', zIndex: 1 }}
+                      className="absolute bottom-0 w-[50%] h-[98%] transition-transform duration-500"
+                      style={{ left: '2%', zIndex: 1 }}
                     >
                       <img
                         src={IMAGES[0].src}
-                        alt="Viplov Figurine"
-                        loading="eager"
-                        decoding="async"
-                        className="w-full h-full object-contain object-bottom select-none drop-shadow-xl"
-                        draggable={false}
-                      />
-                    </div>
-                    {/* Ankur standing in center */}
-                    <div
-                      className="absolute bottom-0 w-[50%] h-[100%] transition-transform duration-500"
-                      style={{ left: '50%', transform: 'translate3d(-50%, 0, 0) scale(1.05)', zIndex: 3 }}
-                    >
-                      <img
-                        src={IMAGES[1].src}
-                        alt="Ankur Figurine"
+                        alt="Viplov Figurine (9 Foot)"
                         loading="eager"
                         decoding="async"
                         className="w-full h-full object-contain object-bottom select-none drop-shadow-2xl"
                         draggable={false}
                       />
+                      <span className="absolute top-4 left-3 px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-xs text-[10px] font-bold tracking-wider text-white border border-white/20">
+                        9 FT
+                      </span>
                     </div>
-                    {/* Dheeraj standing on right */}
+                    {/* Ankur standing in center - 2 Foot */}
                     <div
-                      className="absolute bottom-0 w-[47%] h-[91%] transition-transform duration-500"
-                      style={{ right: '0%', zIndex: 2 }}
+                      className="absolute bottom-0 w-[38%] h-[50%] transition-transform duration-500"
+                      style={{ left: '44%', zIndex: 3 }}
+                    >
+                      <img
+                        src={IMAGES[1].src}
+                        alt="Ankur Figurine (2 Foot)"
+                        loading="eager"
+                        decoding="async"
+                        className="w-full h-full object-contain object-bottom select-none drop-shadow-2xl"
+                        draggable={false}
+                      />
+                      <span className="absolute top-1 left-2 px-1.5 py-0.5 rounded-full bg-black/40 backdrop-blur-xs text-[9px] font-bold tracking-wider text-white border border-white/20">
+                        2 FT
+                      </span>
+                    </div>
+                    {/* Dheeraj standing on right - 5 cm Mini Figurine */}
+                    <div
+                      className="absolute bottom-0 w-[22%] h-[22%] transition-transform duration-500"
+                      style={{ right: '4%', zIndex: 4 }}
                     >
                       <img
                         src={IMAGES[2].src}
-                        alt="Dheeraj Figurine"
+                        alt="Dheeraj Figurine (5 cm)"
                         loading="eager"
                         decoding="async"
                         className="w-full h-full object-contain object-bottom select-none drop-shadow-xl"
                         draggable={false}
                       />
+                      <span className="absolute -top-5 right-0 px-1.5 py-0.5 rounded-full bg-black/40 backdrop-blur-xs text-[9px] font-bold tracking-wider text-white border border-white/20 whitespace-nowrap">
+                        5 CM
+                      </span>
                     </div>
                   </div>
                 ) : (
@@ -419,10 +428,10 @@ export default function App() {
             {/* Boy Name */}
             <h1
               id="boy-name-heading"
-              className="font-black uppercase tracking-tight text-3xl sm:text-4xl text-white leading-none mb-1"
+              className="font-black uppercase tracking-tight text-3xl sm:text-4xl lg:text-[40px] text-white leading-tight mb-1"
               style={{
-                fontFamily: "'Anton', sans-serif",
-                letterSpacing: '-0.01em',
+                fontFamily: "'Plus Jakarta Sans', 'Inter', system-ui, sans-serif",
+                letterSpacing: '-0.02em',
               }}
             >
               {currentItem.name}
@@ -599,7 +608,10 @@ export default function App() {
                 </span>
                 <h3
                   className="text-xl sm:text-2xl font-black uppercase tracking-tight text-white leading-tight"
-                  style={{ fontFamily: "'Anton', sans-serif" }}
+                  style={{
+                    fontFamily: "'Plus Jakarta Sans', 'Inter', system-ui, sans-serif",
+                    letterSpacing: '-0.02em',
+                  }}
                 >
                   {currentItem.name}
                 </h3>
